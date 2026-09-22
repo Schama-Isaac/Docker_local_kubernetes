@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: msc-de1-project
+  labels:
+    app.kubernetes.io/name: flask-sample-app
+    app.kubernetes.io/part-of: distributed-systems
