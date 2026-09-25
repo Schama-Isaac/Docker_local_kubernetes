@@ -1,0 +1,11 @@
+test_add_item_route (test_app.TestAppRoutes.test_add_item_route) ... ok
+test_get_item_route (test_app.TestAppRoutes.test_get_item_route) ... ok
+test_get_nonexistent_item_route (test_app.TestAppRoutes.test_get_nonexistent_item_route) ... ok
+test_health_route (test_app.TestAppRoutes.test_health_route) ... ok
+test_hello_route (test_app.TestAppRoutes.test_hello_route) ... ok
+test_items_route_empty (test_app.TestAppRoutes.test_items_route_empty) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.009s
+
+OK

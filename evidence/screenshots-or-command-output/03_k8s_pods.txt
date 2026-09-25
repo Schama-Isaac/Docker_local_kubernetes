@@ -1,0 +1,3 @@
+NAME                                    READY   STATUS    RESTARTS   AGE   IP          NODE                  NOMINATED NODE   READINESS GATES
+flask-app-deployment-58776db67c-fsl7p   1/1     Running   0          14m   10.244.2.3  msc-de1-kind-worker   <none>           <none>
+flask-app-deployment-58776db67c-v7zk7   1/1     Running   0          14m   10.244.2.2  msc-de1-kind-worker   <none>           <none>

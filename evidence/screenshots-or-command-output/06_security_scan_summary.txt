@@ -1,0 +1,10 @@
+## Overview
+
+                    │                       Analyzed Image
+────────────────────┼──────────────────────────────────────────────────────────────
+  Target            │  zifs/msc-de1-flask-app:1.0.0
+    digest          │  c7f1c61e669b
+    platform        │  linux/arm64
+    vulnerabilities │    0C     7H     3M    40L
+    size            │  58 MB
+    packages        │  207

@@ -1,0 +1,4 @@
+REPOSITORY                                 TAG       IMAGE ID
+msc-de1-flask-app                          local     c7f1c61e669b
+zifs/msc-de1-flask-app                     1.0.0     c7f1c61e669b
+zifs/msc-de1-flask-app                     latest    c7f1c61e669b
