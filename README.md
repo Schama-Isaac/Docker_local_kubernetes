@@ -106,6 +106,50 @@ kubectl delete -f k8s/
 kind delete cluster --name msc-de1-kind
 ```
 
+## Verification commands and evidence
+
+### Baseline validation before containerization
+```bash
+cd /Users/schamazannou/Documents/AIVANCITY/MScDE1/distributed_system/Docker_local_kubernetes_project
+python3 -m unittest discover -s tests -v
+```
+
+### Docker image validation
+```bash
+docker image ls --format 'table {{.Repository}}\t{{.Tag}}\t{{.ID}}' | grep -E 'msc-de1-flask-app|zifs/msc-de1-flask-app'
+```
+
+### Kubernetes validation
+```bash
+kubectl get pods -n msc-de1-project -o wide
+kubectl get svc -n msc-de1-project
+```
+
+### HTTP checks
+```bash
+kubectl port-forward -n msc-de1-project svc/flask-app-service 8080:80
+curl -sS http://localhost:8080/health
+curl -sS http://localhost:8080/items
+```
+
+### Security scan
+```bash
+docker scout cves zifs/msc-de1-flask-app:1.0.0
+```
+
+### Kubernetes behavior checks
+```bash
+kubectl scale deployment/flask-app-deployment -n msc-de1-project --replicas=3
+kubectl rollout status deployment/flask-app-deployment -n msc-de1-project --timeout=180s
+kubectl delete pod -n msc-de1-project "$OLD" --wait=false
+kubectl get pods -n msc-de1-project -o wide
+```
+
+All the actual command outputs used as proof are saved in the evidence folder:
+
+- [evidence/README.md](evidence/README.md)
+- [evidence/screenshots-or-command-output](evidence/screenshots-or-command-output)
+
 ## Security decisions and limitations
 - Application runs as a non-root user in Docker and Kubernetes.
 - Linux capabilities are dropped in the pod.
